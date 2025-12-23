@@ -16,7 +16,7 @@ client = gspread.authorize(creds)
 # --------------------------
 # Open your sheet by ID
 # --------------------------
-SHEET_ID = "1Eb66XvKUerZBQpW8E-9WeHNlbHoXY04OBQ0EwQffUMc"
+SHEET_ID = ""
 sheet = client.open_by_key(SHEET_ID).sheet1
 
 # --------------------------
@@ -36,6 +36,7 @@ def post_data(data_rows):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         sheet.append_row([timestamp, item['name'], item['price'], item['volume']])
     print(f"{len(data_rows)} rows posted at {timestamp}!")
+
 
 
 
